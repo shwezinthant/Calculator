@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <script src="bootstrap-5.2.0-beta1-dist/js/jquery.min.js"></script>
+  </head>
+  <body>
+    <div>
+      <label for="firstnum">First Number</label>
+      <input type="number" id="firstnum" name="firstnum" />
+      <br /><br />
+      <label for="secondnum">Second Number</label>
+      <input type="number" id="secondnum" name="secondnum" />
+      <br /><br /><br />
+      <label for="result">Result</label>
+      <input type="number" id="result" name="result" readonly /><br /><br />
+      <br /><br />
+      <button id="add">ေပါင္းမည္</button>
+      <button id="sub">နူတ္မည္</button>
+      <button id="mul">ေျမွာက္မည္</button>
+      <button id="div">စားမည္</button>
+      <br /><br />
+      <button id="mod">အၾကႊင္း</button>
+      <button id="reset">ဖ်က္မည္</button>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        var num1 = parseInt($("#firstnum").val());
+        var num2 = parseInt($("#secondnum").val());
+        $("#add").click(function () {
+          var num1 = parseInt($("#firstnum").val());
+          var num2 = parseInt($("#secondnum").val());
+          var result = num1 + num2;
+          $("#result").val(result);
+        });
+
+        $("#sub").click(function () {
+          var result = num1 - num2;
+          console.log(result, num1, num2);
+          $("#result").val(result);
+        });
+
+        $("#mul").click(function () {
+          var result = num1 * num2;
+          $("#result").val(result);
+        });
+
+        $("#div").click(function () {
+          var num1 = parseInt($("#firstnum").val());
+          var num2 = parseInt($("#secondnum").val());
+          var result = num1 / num2;
+          $("#result").val(result);
+        });
+
+        $("#mod").click(function () {
+          var num1 = parseInt($("#firstnum").val());
+          var num2 = parseInt($("#secondnum").val());
+          var result = num1 % num2;
+          $("#result").val(result);
+        });
+        $("#reset").click(function () {
+          $("#firstnum").val("");
+          $("#secondnum").val("");
+          $("#result").val("");
+        });
+      });
+    </script>
+  </body>
+</html>
